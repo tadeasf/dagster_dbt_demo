@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: stg_users
+    description: "Cleaned user data from JSONPlaceholder"
+    columns:
+      - name: user_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_posts
+    description: "Cleaned post data from JSONPlaceholder"
+    columns:
+      - name: post_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "Foreign key to users"
+        tests:
+          - not_null
+
+  - name: stg_comments
+    description: "Cleaned comment data from JSONPlaceholder"
+    columns:
+      - name: comment_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: post_id
+        description: "Foreign key to posts"
+        tests:
+          - not_null
+
+  - name: stg_countries
+    description: "Cleaned country data from REST Countries API"
+    columns:
+      - name: country_code_2
+        description: "ISO 3166-1 alpha-2 code"
+        tests:
+          - unique
+          - not_null

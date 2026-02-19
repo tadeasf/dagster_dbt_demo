@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: mart_user_activity
+    description: "User activity summary with post and comment metrics"
+    columns:
+      - name: user_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_post_engagement
+    description: "Post-level engagement metrics with comment counts"
+    columns:
+      - name: post_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_regional_activity
+    description: "Regional demographic statistics aggregated from country data"
+    columns:
+      - name: region
+        description: "Geographic region"
+        tests:
+          - not_null

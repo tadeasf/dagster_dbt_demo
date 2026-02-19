@@ -1,0 +1,32 @@
+[project]
+name = "dagster-dbt-demo"
+version = "0.1.0"
+description = "Dagster + dbt ETL pipeline demo"
+requires-python = ">=3.11"
+dependencies = [
+    "dagster>=1.9",
+    "dagster-webserver>=1.9",
+    "dagster-postgres>=0.25",
+    "dagster-dbt>=0.25",
+    "dbt-postgres>=1.9",
+    "pandas>=2.0",
+    "sqlalchemy>=2.0",
+    "psycopg2-binary>=2.9",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "dagster-webserver",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["dagster_dbt_demo*"]
+
+[tool.dagster]
+module_name = "dagster_dbt_demo.definitions"

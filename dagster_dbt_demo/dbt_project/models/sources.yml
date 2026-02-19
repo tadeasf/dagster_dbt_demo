@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: raw_users
+        description: "Raw user data from JSONPlaceholder API"
+      - name: raw_posts
+        description: "Raw post data from JSONPlaceholder API"
+      - name: raw_comments
+        description: "Raw comment data from JSONPlaceholder API"
+      - name: raw_countries
+        description: "Raw country data from REST Countries API"

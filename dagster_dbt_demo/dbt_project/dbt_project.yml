@@ -1,0 +1,20 @@
+name: dagster_dbt_demo
+version: "1.0.0"
+config-version: 2
+
+profile: dagster_dbt_demo
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  dagster_dbt_demo:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table

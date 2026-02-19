@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# dbt
+dagster_dbt_demo/dbt_project/target/
+dagster_dbt_demo/dbt_project/dbt_packages/
+dagster_dbt_demo/dbt_project/logs/
+
+# Dagster
+*.db
+storage/
+schedules/
+runs/
+history/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+docker-compose.override.yml
